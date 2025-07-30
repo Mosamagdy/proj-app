@@ -1,6 +1,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+   --main-color: #1A1A1A;
+  --sec-color: #FFFD02;
+  --mini-color: #4e5a58;
+
+   --main-font: 'Inter', sans-serif;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,9 +23,9 @@ body {
 }
 
 body {
+  background-color: var(--main-color);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--main-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,4 +45,37 @@ a {
   html {
     color-scheme: dark;
   }
+}
+.loader {
+  position: relative;
+  border: 24px solid;
+  border-color: var(--sec-color)  transparent var(--sec-color) transparent;
+  animation : rotate 2s linear infinite;
+}
+.loader:before,
+.loader:after {
+  content:"";
+  display: block;
+  border: 24px solid transparent;
+  border-left-color: var(--sec-color);
+  position: absolute;
+  left: -24px;
+  top: -24px;
+  animation: mvx 1s infinite linear;
+}
+.loader:before {
+  border-color: transparent var(--sec-color) transparent transparent;
+  animation-name:mvrx;
+  animation-delay: 0.5s;
+}
+@keyframes rotate {
+  100% {transform: rotate(360deg)}
+}
+@keyframes mvx {
+  20% , 80% {transform: translateX(0)}
+  50% {transform: translateX(-50%)}
+}
+@keyframes mvrx {
+  20% , 80% {transform: translateX(0)}
+  50% {transform: translateX(50%)}
 }
