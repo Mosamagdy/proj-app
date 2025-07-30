@@ -5,13 +5,7 @@ import { cookies } from 'next/headers';
 import { Post } from '@/interfieses/post';
 import CardComponent from '../../_component/CardCombonnt/CartCmponent';
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const tokenData = cookies().get('token');
