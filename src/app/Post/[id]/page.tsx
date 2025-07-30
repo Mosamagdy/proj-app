@@ -4,12 +4,12 @@ import { Margin, Padding } from '@mui/icons-material'
 import axios from 'axios'
 import { cookies } from 'next/headers'
 import { Post } from '@/interfieses/post'
-import CardComponent from '@/app/_component/CardCombonnt/CartCmponent'
+import CardComponent from '../../_component/CardCombonnt/CartCmponent'
 import { Params } from 'next/dist/server/request/params'
 
-export default async function page( {params} : {params:Params} ) {
+export default async function Page( {params} : {params:Params} ) {
 
-const { id } = await params; // ✅ لازم await
+const { id } = await params; 
 
    const CookesDatat = await cookies()
   const tokenData  =  CookesDatat.get ('token')
