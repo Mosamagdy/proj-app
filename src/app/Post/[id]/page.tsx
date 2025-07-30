@@ -1,7 +1,4 @@
-// src/app/Post/[id]/page.tsx
-
-import { Container } from '@mui/material';
-import Grid2 from '@mui/material/Unstable_Grid2';
+import { Grid, Container } from '@mui/material';
 import React from 'react';
 import axios from 'axios';
 import { cookies } from 'next/headers';
@@ -38,11 +35,11 @@ export default async function Page({ params }: PageProps) {
       }}
     >
       <Container maxWidth="md">
-        <Grid2 container justifyContent="center" alignItems="center">
-          <Grid2>
+        <Grid container justifyContent="center" alignItems="center">
+          <Grid item>
             <CardComponent singel={false} postDetails={post} />
-          </Grid2>
-        </Grid2>
+          </Grid>
+        </Grid>
       </Container>
     </div>
   );
